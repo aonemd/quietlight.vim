@@ -347,7 +347,7 @@ hi! link diffAdded Special
 " ----------------------------------------------------------------------------
 "  This is atelierforest-dark color palette
 let g:terminal_ansi_colors = [
-      \ "#1b1918", "#f22c40", "#5ab738", "#d5911a",
+      \ "#f5f5f5", "#f22c40", "#5ab738", "#d5911a",
       \ "#407ee7", "#6666ea", "#00ad9c", "#a8a19f",
       \ "#766e6b", "#f22c40", "#5ab738", "#d78700",
       \ "#407ee7", "#6666ea", "#00ad9c", "#f1efee"
