@@ -236,7 +236,7 @@ exe "let s:sp_gray        = ' guisp=". s:palette.gui.gray[s:style] ."'"
 "}}}
 " Vim Highlighting: (see :help highlight-groups)"{{{
 " ----------------------------------------------------------------------------
-exe "hi! ColorColumn"   .s:fg_none        .s:bg_line        .s:fmt_none
+exe "hi! ColorColumn"   .s:fg_none        .s:bg_selection   .s:fmt_none
 "   Conceal"
 "   Cursor"
 "   CursorIM"
