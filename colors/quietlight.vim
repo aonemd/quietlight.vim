@@ -269,7 +269,7 @@ exe "hi! Search"            .s:fg_background  .s:bg_lightmauve    .s:fmt_none
 exe "hi! SpecialKey"        .s:fg_selection   .s:bg_none          .s:fmt_none
 exe "hi! SpellCap"          .s:fg_blue        .s:bg_darkblue      .s:fmt_undr
 exe "hi! SpellLocal"        .s:fg_aqua        .s:bg_darkcyan      .s:fmt_undr
-exe "hi! SpellBad"          .s:fg_red         .s:bg_darkred       .s:fmt_undr
+exe "hi! SpellBad"          .s:fg_darkred     .s:bg_none          .s:fmt_undr
 exe "hi! SpellRare"         .s:fg_purple      .s:bg_darkpurple    .s:fmt_undr
 exe "hi! StatusLine"        .s:fg_mauve       .s:bg_statusline    .s:fmt_revr
 exe "hi! StatusLineNC"      .s:fg_lightmauve  .s:bg_statuslinenc  .s:fmt_revr
@@ -334,7 +334,7 @@ exe "hi! Underlined"      .s:fg_blue        .s:bg_none        .s:fmt_none
 
 exe "hi! Ignore"          .s:fg_none        .s:bg_none        .s:fmt_none
 
-exe "hi! Error"           .s:fg_red         .s:bg_darkred     .s:fmt_undr
+exe "hi! Error"           .s:fg_darkred     .s:bg_none        .s:fmt_undr
 
 exe "hi! Todo"            .s:fg_foreground  .s:bg_none        .s:fmt_bold
 
