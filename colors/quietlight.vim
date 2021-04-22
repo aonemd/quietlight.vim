@@ -25,23 +25,23 @@ let s:palette = {'gui' : {} , 'cterm' : {}}
 
 let s:gui_background = "#f5f5f5"
 let s:gui_foreground = "#333333"
-let s:gui_selection  = s:gui_foreground
+let s:gui_selection  = "#4b83cd"
 let s:gui_line       = "#e4f6d4"
 let s:gui_comment    = "#aaaaaa"
 
 let s:palette.gui.background   = { 'light' : s:gui_background }
 let s:palette.gui.foreground   = { 'light' : s:gui_foreground }
+let s:palette.gui.window       = { 'light' : s:gui_background }
 let s:palette.gui.selection    = { 'light' : s:gui_selection  }
 let s:palette.gui.line         = { 'light' : s:gui_line       }
 let s:palette.gui.comment      = { 'light' : s:gui_comment    }
 let s:palette.gui.red          = { 'light' : "#aa3731"        }
 let s:palette.gui.orange       = { 'light' : "#ab6526"        }
-let s:palette.gui.yellow       = { 'light' : "#ffd700"        }
+let s:palette.gui.yellow       = { 'light' : "#ffe055"        }
 let s:palette.gui.green        = { 'light' : "#448c27"        }
 let s:palette.gui.aqua         = { 'light' : "#91b3e0"        }
 let s:palette.gui.blue         = { 'light' : "#4b83cd"        }
 let s:palette.gui.purple       = { 'light' : "#7a3e9d"        }
-let s:palette.gui.window       = { 'light' : s:gui_background }
 let s:palette.gui.darkcolumn   = { 'light' : "#1c1c1c"        }
 let s:palette.gui.addbg        = { 'light' : "#448c27"        }
 let s:palette.gui.addfg        = { 'light' : "#dfefdf"        }
@@ -52,6 +52,7 @@ let s:palette.gui.darkblue     = { 'light' : "#00005f"        }
 let s:palette.gui.darkcyan     = { 'light' : "#005f5f"        }
 let s:palette.gui.darkred      = { 'light' : "#660000"        }
 let s:palette.gui.darkpurple   = { 'light' : "#5f005f"        }
+let s:palette.gui.gray         = { 'light' : "#777777"        }
 let s:palette.gui.statusline   = { 'light' : s:gui_background }
 let s:palette.gui.statuslinenc = { 'light' : s:gui_background }
 let s:palette.gui.gitgutteradd = { 'light' : "#448c27"        }
@@ -144,6 +145,7 @@ call s:build_prim('bg', 'darkblue')
 call s:build_prim('bg', 'darkcyan')
 call s:build_prim('bg', 'darkred')
 call s:build_prim('bg', 'darkpurple')
+call s:build_prim('bg', 'gray')
 call s:build_prim('bg', 'statusline')
 call s:build_prim('bg', 'statuslinenc')
 call s:build_prim('bg', 'linewarning')
@@ -171,6 +173,7 @@ call s:build_prim('fg', 'darkblue')
 call s:build_prim('fg', 'darkcyan')
 call s:build_prim('fg', 'darkred')
 call s:build_prim('fg', 'darkpurple')
+call s:build_prim('fg', 'gray')
 call s:build_prim('fg', 'gitgutteradd')
 call s:build_prim('fg', 'gitgutterchg')
 call s:build_prim('fg', 'gitgutterdlt')
@@ -209,6 +212,7 @@ exe "let s:sp_darkblue   = ' guisp=". s:palette.gui.darkblue[s:style]   ."'"
 exe "let s:sp_darkcyan   = ' guisp=". s:palette.gui.darkcyan[s:style]   ."'"
 exe "let s:sp_darkred    = ' guisp=". s:palette.gui.darkred[s:style]    ."'"
 exe "let s:sp_darkpurple = ' guisp=". s:palette.gui.darkpurple[s:style] ."'"
+exe "let s:sp_gray       = ' guisp=". s:palette.gui.gray[s:style] ."'"
 
 "}}}
 " Vim Highlighting: (see :help highlight-groups)"{{{
@@ -230,7 +234,7 @@ exe "hi! Folded"        .s:fg_comment     .s:bg_darkcolumn  .s:fmt_none
 exe "hi! FoldColumn"    .s:fg_none        .s:bg_darkcolumn  .s:fmt_none
 exe "hi! SignColumn"    .s:fg_none        .s:bg_background  .s:fmt_none
 "   Incsearch"
-exe "hi! LineNr"        .s:fg_selection   .s:bg_none        .s:fmt_none
+exe "hi! LineNr"        .s:fg_foreground  .s:bg_none        .s:fmt_none
 exe "hi! CursorLineNr"  .s:fg_purple      .s:bg_none        .s:fmt_none
 exe "hi! MatchParen"    .s:fg_foreground  .s:bg_purple      .s:fmt_none
 exe "hi! ModeMsg"       .s:fg_green       .s:bg_none        .s:fmt_none
@@ -257,7 +261,7 @@ exe "hi! TabLineFill"       .s:fg_background  .s:bg_background    .s:fmt_revr
 exe "hi! EndOfBuffer"       .s:fg_background  .s:bg_background    .s:fmt_none
 "   TabLineSel"
 exe "hi! Title"             .s:fg_yellow      .s:bg_none        .s:fmt_none
-exe "hi! Visual"            .s:fg_none        .s:bg_selection   .s:fmt_none
+exe "hi! Visual"            .s:fg_background  .s:bg_selection   .s:fmt_none
 "   VisualNos"
 exe "hi! WarningMsg"        .s:fg_red         .s:bg_none        .s:fmt_none
 exe "hi! WildMenu"          .s:fg_selection   .s:bg_orange      .s:fmt_none
@@ -271,7 +275,7 @@ exe "hi! Normal"        .s:fg_foreground  .s:bg_background    .s:fmt_none
 " ----------------------------------------------------------------------------
 exe "hi! Comment"         .s:fg_comment     .s:bg_none        .s:fmt_none
 
-exe "hi! Constant"        .s:fg_red         .s:bg_none        .s:fmt_none
+exe "hi! Constant"        .s:fg_orange      .s:bg_none        .s:fmt_none
 exe "hi! String"          .s:fg_green       .s:bg_none        .s:fmt_none
 "   Character"
 "   Number"
@@ -279,25 +283,27 @@ exe "hi! String"          .s:fg_green       .s:bg_none        .s:fmt_none
 "   Float"
 
 exe "hi! Identifier"      .s:fg_purple      .s:bg_none        .s:fmt_none
-exe "hi! Function"        .s:fg_foreground  .s:bg_none        .s:fmt_bold
+exe "hi! Function"        .s:fg_red         .s:bg_none        .s:fmt_bold
 
 exe "hi! Statement"       .s:fg_blue        .s:bg_none        .s:fmt_none
 "   Conditional"
 "   Repeat"
 "   Label"
-exe "hi! Operator"        .s:fg_aqua        .s:bg_none        .s:fmt_none
-"   Keyword"
+exe "hi! Operator"        .s:fg_gray        .s:bg_none        .s:fmt_none
+exe "hi! Keyword"         .s:fg_blue        .s:bg_none        .s:fmt_none
 "   Exception"
 
-exe "hi! PreProc"         .s:fg_aqua        .s:bg_none        .s:fmt_none
+exe "hi! PreProc"         .s:fg_purple      .s:bg_none        .s:fmt_none
 "   Include"
 "   Define"
 "   Macro"
 "   PreCondit"
 
-exe "hi! Type"            .s:fg_orange      .s:bg_none        .s:fmt_none
+exe "hi! Type"            .s:fg_purple      .s:bg_none        .s:fmt_none
+exe "hi! StorageClass"    .s:fg_red         .s:bg_none        .s:fmt_none
 "   StorageClass"
-exe "hi! Structure"       .s:fg_aqua        .s:bg_none        .s:fmt_none
+exe "hi! Structure"       .s:fg_blue        .s:bg_none        .s:fmt_none
+exe "hi! Typedef"         .s:fg_purple        .s:bg_none        .s:fmt_none
 "   Typedef"
 
 exe "hi! Special"         .s:fg_green       .s:bg_none        .s:fmt_none
