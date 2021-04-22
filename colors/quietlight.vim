@@ -51,6 +51,8 @@ let s:palette.gui.delbg        = { 'light' : "#aa3731"        }
 let s:palette.gui.darkblue     = { 'light' : "#00005f"        }
 let s:palette.gui.darkcyan     = { 'light' : "#005f5f"        }
 let s:palette.gui.darkred      = { 'light' : "#660000"        }
+let s:palette.gui.mauve        = { 'light' : "#705697"        }
+let s:palette.gui.lightmauve   = { 'light' : "#c4b7d7"        }
 let s:palette.gui.darkpurple   = { 'light' : "#5f005f"        }
 let s:palette.gui.gray         = { 'light' : "#777777"        }
 let s:palette.gui.statusline   = { 'light' : s:gui_background }
@@ -88,6 +90,8 @@ let s:palette.cterm.delbg        = { 'light' : "131"              }
 let s:palette.cterm.darkblue     = { 'light' : "17"               }
 let s:palette.cterm.darkcyan     = { 'light' : "24"               }
 let s:palette.cterm.darkred      = { 'light' : "52"               }
+let s:palette.cterm.mauve        = { 'light' : "60"               }
+let s:palette.cterm.lightmauve   = { 'light' : "60"               }
 let s:palette.cterm.darkpurple   = { 'light' : "53"               }
 let s:palette.cterm.gray         = { 'light' : "102"              }
 let s:palette.cterm.statusline   = { 'light' : s:cterm_background }
@@ -144,6 +148,8 @@ call s:build_prim('bg', 'delbg')
 call s:build_prim('bg', 'darkblue')
 call s:build_prim('bg', 'darkcyan')
 call s:build_prim('bg', 'darkred')
+call s:build_prim('bg', 'mauve')
+call s:build_prim('bg', 'lightmauve')
 call s:build_prim('bg', 'darkpurple')
 call s:build_prim('bg', 'gray')
 call s:build_prim('bg', 'statusline')
@@ -172,6 +178,8 @@ call s:build_prim('fg', 'changefg')
 call s:build_prim('fg', 'darkblue')
 call s:build_prim('fg', 'darkcyan')
 call s:build_prim('fg', 'darkred')
+call s:build_prim('fg', 'mauve')
+call s:build_prim('fg', 'lightmauve')
 call s:build_prim('fg', 'darkpurple')
 call s:build_prim('fg', 'gray')
 call s:build_prim('fg', 'gitgutteradd')
@@ -190,29 +198,31 @@ exe "let s:fmt_stnd = ' gui=NONE".s:s.      " cterm=NONE".s:s.      " term=NONE"
 exe "let s:fmt_revr = ' gui=NONE".s:r.      " cterm=NONE".s:r.      " term=NONE".s:r    ."'"
 exe "let s:fmt_revb = ' gui=NONE".s:r.s:b.  " cterm=NONE".s:r.s:b.  " term=NONE".s:r.s:b."'"
 
-exe "let s:sp_none       = ' guisp=". s:none                            ."'"
-exe "let s:sp_foreground = ' guisp=". s:palette.gui.foreground[s:style] ."'"
-exe "let s:sp_background = ' guisp=". s:palette.gui.background[s:style] ."'"
-exe "let s:sp_selection  = ' guisp=". s:palette.gui.selection[s:style]  ."'"
-exe "let s:sp_line       = ' guisp=". s:palette.gui.line[s:style]       ."'"
-exe "let s:sp_comment    = ' guisp=". s:palette.gui.comment[s:style]    ."'"
-exe "let s:sp_red        = ' guisp=". s:palette.gui.red[s:style]        ."'"
-exe "let s:sp_orange     = ' guisp=". s:palette.gui.orange[s:style]     ."'"
-exe "let s:sp_yellow     = ' guisp=". s:palette.gui.yellow[s:style]     ."'"
-exe "let s:sp_green      = ' guisp=". s:palette.gui.green[s:style]      ."'"
-exe "let s:sp_aqua       = ' guisp=". s:palette.gui.aqua[s:style]       ."'"
-exe "let s:sp_blue       = ' guisp=". s:palette.gui.blue[s:style]       ."'"
-exe "let s:sp_purple     = ' guisp=". s:palette.gui.purple[s:style]     ."'"
-exe "let s:sp_window     = ' guisp=". s:palette.gui.window[s:style]     ."'"
-exe "let s:sp_addbg      = ' guisp=". s:palette.gui.addbg[s:style]      ."'"
-exe "let s:sp_addfg      = ' guisp=". s:palette.gui.addfg[s:style]      ."'"
-exe "let s:sp_changebg   = ' guisp=". s:palette.gui.changebg[s:style]   ."'"
-exe "let s:sp_changefg   = ' guisp=". s:palette.gui.changefg[s:style]   ."'"
-exe "let s:sp_darkblue   = ' guisp=". s:palette.gui.darkblue[s:style]   ."'"
-exe "let s:sp_darkcyan   = ' guisp=". s:palette.gui.darkcyan[s:style]   ."'"
-exe "let s:sp_darkred    = ' guisp=". s:palette.gui.darkred[s:style]    ."'"
-exe "let s:sp_darkpurple = ' guisp=". s:palette.gui.darkpurple[s:style] ."'"
-exe "let s:sp_gray       = ' guisp=". s:palette.gui.gray[s:style] ."'"
+exe "let s:sp_none        = ' guisp=". s:none                            ."'"
+exe "let s:sp_foreground  = ' guisp=". s:palette.gui.foreground[s:style] ."'"
+exe "let s:sp_background  = ' guisp=". s:palette.gui.background[s:style] ."'"
+exe "let s:sp_selection   = ' guisp=". s:palette.gui.selection[s:style]  ."'"
+exe "let s:sp_line        = ' guisp=". s:palette.gui.line[s:style]       ."'"
+exe "let s:sp_comment     = ' guisp=". s:palette.gui.comment[s:style]    ."'"
+exe "let s:sp_red         = ' guisp=". s:palette.gui.red[s:style]        ."'"
+exe "let s:sp_orange      = ' guisp=". s:palette.gui.orange[s:style]     ."'"
+exe "let s:sp_yellow      = ' guisp=". s:palette.gui.yellow[s:style]     ."'"
+exe "let s:sp_green       = ' guisp=". s:palette.gui.green[s:style]      ."'"
+exe "let s:sp_aqua        = ' guisp=". s:palette.gui.aqua[s:style]       ."'"
+exe "let s:sp_blue        = ' guisp=". s:palette.gui.blue[s:style]       ."'"
+exe "let s:sp_purple      = ' guisp=". s:palette.gui.purple[s:style]     ."'"
+exe "let s:sp_window      = ' guisp=". s:palette.gui.window[s:style]     ."'"
+exe "let s:sp_addbg       = ' guisp=". s:palette.gui.addbg[s:style]      ."'"
+exe "let s:sp_addfg       = ' guisp=". s:palette.gui.addfg[s:style]      ."'"
+exe "let s:sp_changebg    = ' guisp=". s:palette.gui.changebg[s:style]   ."'"
+exe "let s:sp_changefg    = ' guisp=". s:palette.gui.changefg[s:style]   ."'"
+exe "let s:sp_darkblue    = ' guisp=". s:palette.gui.darkblue[s:style]   ."'"
+exe "let s:sp_darkcyan    = ' guisp=". s:palette.gui.darkcyan[s:style]   ."'"
+exe "let s:sp_darkred     = ' guisp=". s:palette.gui.darkred[s:style]    ."'"
+exe "let s:sp_mauve       = ' guisp=". s:palette.gui.mauve[s:style] ."'"
+exe "let s:sp_lightmauve  = ' guisp=". s:palette.gui.lightmauve[s:style] ."'"
+exe "let s:sp_darkpurple  = ' guisp=". s:palette.gui.darkpurple[s:style] ."'"
+exe "let s:sp_gray        = ' guisp=". s:palette.gui.gray[s:style] ."'"
 
 "}}}
 " Vim Highlighting: (see :help highlight-groups)"{{{
@@ -252,8 +262,8 @@ exe "hi! SpellCap"          .s:fg_blue        .s:bg_darkblue      .s:fmt_undr
 exe "hi! SpellLocal"        .s:fg_aqua        .s:bg_darkcyan      .s:fmt_undr
 exe "hi! SpellBad"          .s:fg_red         .s:bg_darkred       .s:fmt_undr
 exe "hi! SpellRare"         .s:fg_purple      .s:bg_darkpurple    .s:fmt_undr
-exe "hi! StatusLine"        .s:fg_blue        .s:bg_statusline    .s:fmt_revr
-exe "hi! StatusLineNC"      .s:fg_aqua        .s:bg_statuslinenc  .s:fmt_revr
+exe "hi! StatusLine"        .s:fg_mauve       .s:bg_statusline    .s:fmt_revr
+exe "hi! StatusLineNC"      .s:fg_lightmauve  .s:bg_statuslinenc  .s:fmt_revr
 exe "hi! StatusLineTerm"    .s:fg_blue        .s:bg_statusline    .s:fmt_revr
 exe "hi! StatusLineTermNC"  .s:fg_aqua        .s:bg_statuslinenc  .s:fmt_revr
 exe "hi! TabLine"           .s:fg_foreground  .s:bg_darkcolumn    .s:fmt_revr
