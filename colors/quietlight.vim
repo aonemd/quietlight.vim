@@ -312,18 +312,16 @@ exe "hi! Operator"        .s:fg_gray        .s:bg_none        .s:fmt_none
 exe "hi! Keyword"         .s:fg_blue        .s:bg_none        .s:fmt_none
 "   Exception"
 
-exe "hi! PreProc"         .s:fg_purple      .s:bg_none        .s:fmt_none
+exe "hi! PreProc"         .s:fg_blue      .s:bg_none        .s:fmt_none
 "   Include"
 "   Define"
 "   Macro"
 "   PreCondit"
 
-exe "hi! Type"            .s:fg_purple      .s:bg_none        .s:fmt_none
+exe "hi! Type"            .s:fg_purple      .s:bg_none        .s:fmt_bold
 exe "hi! StorageClass"    .s:fg_red         .s:bg_none        .s:fmt_none
-"   StorageClass"
 exe "hi! Structure"       .s:fg_blue        .s:bg_none        .s:fmt_none
-exe "hi! Typedef"         .s:fg_purple        .s:bg_none        .s:fmt_none
-"   Typedef"
+exe "hi! Typedef"         .s:fg_purple      .s:bg_none        .s:fmt_none
 
 exe "hi! Special"         .s:fg_green       .s:bg_none        .s:fmt_none
 "   SpecialChar"
