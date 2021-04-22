@@ -23,41 +23,41 @@ let g:colors_name = "quietlight"
 
 let s:palette = {'gui' : {} , 'cterm' : {}}
 
-let s:gui_background = "#1b1918"
-let s:gui_selection  = "#373b41"
-let s:gui_line       = "#282a2e"
-let s:gui_comment    = "#707880"
+let s:gui_background = "#f5f5f5"
+let s:gui_foreground = "#333333"
+let s:gui_selection  = s:gui_foreground
+let s:gui_line       = "#e4f6d4"
+let s:gui_comment    = "#aaaaaa"
 
 let s:palette.gui.background   = { 'light' : s:gui_background }
-let s:palette.gui.foreground   = { 'light' : "#c5c8c6"        }
+let s:palette.gui.foreground   = { 'light' : s:gui_foreground }
 let s:palette.gui.selection    = { 'light' : s:gui_selection  }
 let s:palette.gui.line         = { 'light' : s:gui_line       }
 let s:palette.gui.comment      = { 'light' : s:gui_comment    }
-let s:palette.gui.red          = { 'light' : "#d75f87"        }
-let s:palette.gui.orange       = { 'light' : "#d78700"        }
+let s:palette.gui.red          = { 'light' : "#aa3731"        }
+let s:palette.gui.orange       = { 'light' : "#ab6526"        }
 let s:palette.gui.yellow       = { 'light' : "#ffd700"        }
-let s:palette.gui.green        = { 'light' : "#5faf5f"        }
-let s:palette.gui.aqua         = { 'light' : "#87afd7"        }
-let s:palette.gui.blue         = { 'light' : "#5fafff"        }
-let s:palette.gui.purple       = { 'light' : "#8787ff"        }
-let s:palette.gui.window       = { 'light' : "#303030"        }
+let s:palette.gui.green        = { 'light' : "#448c27"        }
+let s:palette.gui.aqua         = { 'light' : "#91b3e0"        }
+let s:palette.gui.blue         = { 'light' : "#4b83cd"        }
+let s:palette.gui.purple       = { 'light' : "#7a3e9d"        }
+let s:palette.gui.window       = { 'light' : s:gui_background }
 let s:palette.gui.darkcolumn   = { 'light' : "#1c1c1c"        }
-let s:palette.gui.addbg        = { 'light' : "#5faf5f"        }
+let s:palette.gui.addbg        = { 'light' : "#448c27"        }
 let s:palette.gui.addfg        = { 'light' : "#dfefdf"        }
-let s:palette.gui.changebg     = { 'light' : "#d78700"        }
+let s:palette.gui.changebg     = { 'light' : "#ab6526"        }
 let s:palette.gui.changefg     = { 'light' : "#f7e7cc"        }
-let s:palette.gui.delbg        = { 'light' : "#d75f87"        }
+let s:palette.gui.delbg        = { 'light' : "#aa3731"        }
 let s:palette.gui.darkblue     = { 'light' : "#00005f"        }
 let s:palette.gui.darkcyan     = { 'light' : "#005f5f"        }
-let s:palette.gui.darkred      = { 'light' : "#5f0000"        }
+let s:palette.gui.darkred      = { 'light' : "#660000"        }
 let s:palette.gui.darkpurple   = { 'light' : "#5f005f"        }
-let s:palette.gui.gray         = { 'light' : "#262626"        }
 let s:palette.gui.statusline   = { 'light' : s:gui_background }
 let s:palette.gui.statuslinenc = { 'light' : s:gui_background }
-let s:palette.gui.gitgutteradd = { 'light' : "#5faf5f"        }
-let s:palette.gui.gitgutterchg = { 'light' : "#d78700"        }
-let s:palette.gui.gitgutterdlt = { 'light' : "#d75f87"        }
-let s:palette.gui.linewarning  = { 'light' : "#371F1C"        }
+let s:palette.gui.gitgutteradd = { 'light' : "#448c27"        }
+let s:palette.gui.gitgutterchg = { 'light' : "#ab6526"        }
+let s:palette.gui.gitgutterdlt = { 'light' : "#aa3731"        }
+let s:palette.gui.linewarning  = { 'light' : "#ffe055"        }
 
 let s:cterm_foreground = "250"
 let s:cterm_selection  = "237"
@@ -87,7 +87,6 @@ let s:palette.cterm.darkblue     = { 'light' : "17"               }
 let s:palette.cterm.darkcyan     = { 'light' : "24"               }
 let s:palette.cterm.darkred      = { 'light' : "52"               }
 let s:palette.cterm.darkpurple   = { 'light' : "53"               }
-let s:palette.cterm.gray         = { 'light' : "235"              }
 let s:palette.cterm.statusline   = { 'light' : "242"              }
 let s:palette.cterm.statuslinenc = { 'light' : "239"              }
 let s:palette.cterm.gitgutteradd = { 'light' : "71"               }
@@ -170,7 +169,6 @@ call s:build_prim('fg', 'darkblue')
 call s:build_prim('fg', 'darkcyan')
 call s:build_prim('fg', 'darkred')
 call s:build_prim('fg', 'darkpurple')
-call s:build_prim('fg', 'gray')
 call s:build_prim('fg', 'gitgutteradd')
 call s:build_prim('fg', 'gitgutterchg')
 call s:build_prim('fg', 'gitgutterdlt')
@@ -231,7 +229,7 @@ exe "hi! FoldColumn"    .s:fg_none        .s:bg_darkcolumn  .s:fmt_none
 exe "hi! SignColumn"    .s:fg_none        .s:bg_background  .s:fmt_none
 "   Incsearch"
 exe "hi! LineNr"        .s:fg_selection   .s:bg_none        .s:fmt_none
-exe "hi! CursorLineNr"  .s:fg_yellow      .s:bg_none        .s:fmt_none
+exe "hi! CursorLineNr"  .s:fg_purple      .s:bg_none        .s:fmt_none
 exe "hi! MatchParen"    .s:fg_foreground  .s:bg_purple      .s:fmt_none
 exe "hi! ModeMsg"       .s:fg_green       .s:bg_none        .s:fmt_none
 exe "hi! MoreMsg"       .s:fg_green       .s:bg_none        .s:fmt_none
