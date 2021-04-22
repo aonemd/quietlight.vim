@@ -25,7 +25,7 @@ let s:palette = {'gui' : {} , 'cterm' : {}}
 
 let s:gui_background = "#f5f5f5"
 let s:gui_foreground = "#333333"
-let s:gui_selection  = "#4b83cd"
+let s:gui_selection  = "#a1a8b1"
 let s:gui_line       = "#e4f6d4"
 let s:gui_comment    = "#aaaaaa"
 
@@ -283,7 +283,7 @@ exe "hi! Title"             .s:fg_yellow      .s:bg_none        .s:fmt_none
 exe "hi! Visual"            .s:fg_background  .s:bg_selection   .s:fmt_none
 "   VisualNos"
 exe "hi! WarningMsg"        .s:fg_red         .s:bg_none        .s:fmt_none
-exe "hi! WildMenu"          .s:fg_selection   .s:bg_lime        .s:fmt_none
+exe "hi! WildMenu"          .s:fg_foreground  .s:bg_lime        .s:fmt_none
 exe "hi! LongLineWarning"   .s:fg_none        .s:bg_linewarning .s:fmt_undr
 
 
