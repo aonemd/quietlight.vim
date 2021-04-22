@@ -32,6 +32,7 @@ let s:gui_comment    = "#aaaaaa"
 let s:palette.gui.background   = { 'light' : s:gui_background }
 let s:palette.gui.foreground   = { 'light' : s:gui_foreground }
 let s:palette.gui.window       = { 'light' : s:gui_background }
+let s:palette.gui.popupwindow  = { 'light' : "#ffffff"        }
 let s:palette.gui.selection    = { 'light' : s:gui_selection  }
 let s:palette.gui.line         = { 'light' : s:gui_line       }
 let s:palette.gui.comment      = { 'light' : s:gui_comment    }
@@ -54,6 +55,7 @@ let s:palette.gui.darkred      = { 'light' : "#660000"        }
 let s:palette.gui.mauve        = { 'light' : "#705697"        }
 let s:palette.gui.lightmauve   = { 'light' : "#c4b7d7"        }
 let s:palette.gui.darkpurple   = { 'light' : "#5f005f"        }
+let s:palette.gui.lime         = { 'light' : "#c1f5b0"        }
 let s:palette.gui.gray         = { 'light' : "#777777"        }
 let s:palette.gui.statusline   = { 'light' : s:gui_background }
 let s:palette.gui.statuslinenc = { 'light' : s:gui_background }
@@ -71,6 +73,7 @@ let s:cterm_comment    = "145"
 let s:palette.cterm.background   = { 'light' : s:cterm_background }
 let s:palette.cterm.foreground   = { 'light' : s:cterm_foreground }
 let s:palette.cterm.window       = { 'light' : s:cterm_background }
+let s:palette.cterm.popupwindow  = { 'light' : "231"              }
 let s:palette.cterm.selection    = { 'light' : s:cterm_selection  }
 let s:palette.cterm.line         = { 'light' : s:cterm_line       }
 let s:palette.cterm.comment      = { 'light' : s:cterm_comment    }
@@ -93,6 +96,7 @@ let s:palette.cterm.darkred      = { 'light' : "52"               }
 let s:palette.cterm.mauve        = { 'light' : "60"               }
 let s:palette.cterm.lightmauve   = { 'light' : "60"               }
 let s:palette.cterm.darkpurple   = { 'light' : "53"               }
+let s:palette.cterm.lime         = { 'light' : "157"              }
 let s:palette.cterm.gray         = { 'light' : "102"              }
 let s:palette.cterm.statusline   = { 'light' : s:cterm_background }
 let s:palette.cterm.statuslinenc = { 'light' : s:cterm_background }
@@ -139,6 +143,7 @@ call s:build_prim('bg', 'aqua')
 call s:build_prim('bg', 'blue')
 call s:build_prim('bg', 'purple')
 call s:build_prim('bg', 'window')
+call s:build_prim('bg', 'popupwindow')
 call s:build_prim('bg', 'darkcolumn')
 call s:build_prim('bg', 'addbg')
 call s:build_prim('bg', 'addfg')
@@ -151,6 +156,7 @@ call s:build_prim('bg', 'darkred')
 call s:build_prim('bg', 'mauve')
 call s:build_prim('bg', 'lightmauve')
 call s:build_prim('bg', 'darkpurple')
+call s:build_prim('bg', 'lime')
 call s:build_prim('bg', 'gray')
 call s:build_prim('bg', 'statusline')
 call s:build_prim('bg', 'statuslinenc')
@@ -181,6 +187,7 @@ call s:build_prim('fg', 'darkred')
 call s:build_prim('fg', 'mauve')
 call s:build_prim('fg', 'lightmauve')
 call s:build_prim('fg', 'darkpurple')
+call s:build_prim('fg', 'lime')
 call s:build_prim('fg', 'gray')
 call s:build_prim('fg', 'gitgutteradd')
 call s:build_prim('fg', 'gitgutterchg')
@@ -212,6 +219,7 @@ exe "let s:sp_aqua        = ' guisp=". s:palette.gui.aqua[s:style]       ."'"
 exe "let s:sp_blue        = ' guisp=". s:palette.gui.blue[s:style]       ."'"
 exe "let s:sp_purple      = ' guisp=". s:palette.gui.purple[s:style]     ."'"
 exe "let s:sp_window      = ' guisp=". s:palette.gui.window[s:style]     ."'"
+exe "let s:sp_popupwindow = ' guisp=". s:palette.gui.popupwindow[s:style]."'"
 exe "let s:sp_addbg       = ' guisp=". s:palette.gui.addbg[s:style]      ."'"
 exe "let s:sp_addfg       = ' guisp=". s:palette.gui.addfg[s:style]      ."'"
 exe "let s:sp_changebg    = ' guisp=". s:palette.gui.changebg[s:style]   ."'"
@@ -222,6 +230,7 @@ exe "let s:sp_darkred     = ' guisp=". s:palette.gui.darkred[s:style]    ."'"
 exe "let s:sp_mauve       = ' guisp=". s:palette.gui.mauve[s:style] ."'"
 exe "let s:sp_lightmauve  = ' guisp=". s:palette.gui.lightmauve[s:style] ."'"
 exe "let s:sp_darkpurple  = ' guisp=". s:palette.gui.darkpurple[s:style] ."'"
+exe "let s:sp_lime        = ' guisp=". s:palette.gui.lime[s:style] ."'"
 exe "let s:sp_gray        = ' guisp=". s:palette.gui.gray[s:style] ."'"
 
 "}}}
@@ -250,9 +259,9 @@ exe "hi! MatchParen"    .s:fg_foreground  .s:bg_purple      .s:fmt_none
 exe "hi! ModeMsg"       .s:fg_green       .s:bg_none        .s:fmt_none
 exe "hi! MoreMsg"       .s:fg_green       .s:bg_none        .s:fmt_none
 exe "hi! NonText"       .s:fg_selection   .s:bg_none        .s:fmt_none
-exe "hi! Pmenu"         .s:fg_foreground  .s:bg_selection   .s:fmt_none
-exe "hi! PmenuSel"      .s:fg_foreground  .s:bg_selection   .s:fmt_revr
-exe "hi! InfoPopup"     .s:fg_foreground  .s:bg_selection   .s:fmt_none
+exe "hi! Pmenu"         .s:fg_foreground  .s:bg_popupwindow .s:fmt_none
+exe "hi! PmenuSel"      .s:fg_lime        .s:bg_foreground  .s:fmt_revr
+exe "hi! InfoPopup"     .s:fg_foreground  .s:bg_popupwindow .s:fmt_none
 "   PmenuSbar"
 "   PmenuThumb"
 exe "hi! Question"          .s:fg_green       .s:bg_none          .s:fmt_none
