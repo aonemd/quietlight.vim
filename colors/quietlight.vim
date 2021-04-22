@@ -52,8 +52,8 @@ let s:palette.gui.darkcyan     = { 'light' : "#005f5f"        }
 let s:palette.gui.darkred      = { 'light' : "#5f0000"        }
 let s:palette.gui.darkpurple   = { 'light' : "#5f005f"        }
 let s:palette.gui.gray         = { 'light' : "#262626"        }
-let s:palette.gui.statusline   = { 'light' : "#6c6c6c"        }
-let s:palette.gui.statuslinenc = { 'light' : "#4e4e4e"        }
+let s:palette.gui.statusline   = { 'light' : s:gui_background }
+let s:palette.gui.statuslinenc = { 'light' : s:gui_background }
 let s:palette.gui.gitgutteradd = { 'light' : "#5faf5f"        }
 let s:palette.gui.gitgutterchg = { 'light' : "#d78700"        }
 let s:palette.gui.gitgutterdlt = { 'light' : "#d75f87"        }
@@ -248,10 +248,10 @@ exe "hi! SpellCap"          .s:fg_blue        .s:bg_darkblue      .s:fmt_undr
 exe "hi! SpellLocal"        .s:fg_aqua        .s:bg_darkcyan      .s:fmt_undr
 exe "hi! SpellBad"          .s:fg_red         .s:bg_darkred       .s:fmt_undr
 exe "hi! SpellRare"         .s:fg_purple      .s:bg_darkpurple    .s:fmt_undr
-exe "hi! StatusLine"        .s:fg_gray        .s:bg_statusline    .s:fmt_revr
-exe "hi! StatusLineNC"      .s:fg_gray        .s:bg_statuslinenc  .s:fmt_revr
-exe "hi! StatusLineTerm"    .s:fg_gray        .s:bg_statusline    .s:fmt_revr
-exe "hi! StatusLineTermNC"  .s:fg_gray        .s:bg_statuslinenc  .s:fmt_revr
+exe "hi! StatusLine"        .s:fg_blue        .s:bg_statusline    .s:fmt_revr
+exe "hi! StatusLineNC"      .s:fg_aqua        .s:bg_statuslinenc  .s:fmt_revr
+exe "hi! StatusLineTerm"    .s:fg_blue        .s:bg_statusline    .s:fmt_revr
+exe "hi! StatusLineTermNC"  .s:fg_aqua        .s:bg_statuslinenc  .s:fmt_revr
 exe "hi! TabLine"           .s:fg_foreground  .s:bg_darkcolumn    .s:fmt_revr
 exe "hi! TabLineFill"       .s:fg_background  .s:bg_background    .s:fmt_revr
 exe "hi! EndOfBuffer"       .s:fg_background  .s:bg_background    .s:fmt_none
