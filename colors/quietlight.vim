@@ -66,7 +66,7 @@ let s:palette.gui.linewarning  = { 'light' : "#ffe055"        }
 
 let s:cterm_background = "231"
 let s:cterm_foreground = "59"
-let s:cterm_selection  = "68"
+let s:cterm_selection  = "145"
 let s:cterm_line       = "194"
 let s:cterm_comment    = "145"
 
