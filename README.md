@@ -7,6 +7,8 @@
   VSC](https://github.com/onecrayon/theme-quietlight-vsc).
 
   ![screenshot_demo](https://user-images.githubusercontent.com/16504838/115804325-1202a900-a3e3-11eb-8c65-dde296b5806b.png)
+
+  [Screenshots](https://github.com/aonemd/quietlight.vim#screenshots)
 </div>
 
 ## Installation
@@ -73,3 +75,14 @@ issue or send a pull request.
 ## License
 
 See [LICENSE](https://github.com/aonemd/quietlight.vim/blob/master/LICENSE).
+
+
+## Screenshots
+
+![screenshot_1](https://user-images.githubusercontent.com/16504838/115804827-0ebbed00-a3e4-11eb-9e24-5d938fdc7e69.png)
+
+![screenshot_2](https://user-images.githubusercontent.com/16504838/115805140-a1f52280-a3e4-11eb-8c22-39ccd7225e8b.png)
+
+![screenshot_3](https://user-images.githubusercontent.com/16504838/115805286-f39dad00-a3e4-11eb-9603-9fddbf35a49b.png)
+
+![screenshot_4](https://user-images.githubusercontent.com/16504838/115805459-5000cc80-a3e5-11eb-9670-8d006b478348.png)
