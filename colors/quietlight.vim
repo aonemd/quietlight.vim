@@ -52,7 +52,6 @@ let s:palette.gui.green        = { 'light' : s:gui_green      }
 let s:palette.gui.aqua         = { 'light' : s:gui_aqua       }
 let s:palette.gui.blue         = { 'light' : s:gui_blue       }
 let s:palette.gui.purple       = { 'light' : s:gui_purple     }
-let s:palette.gui.darkcolumn   = { 'light' : "#1c1c1c"        }
 let s:palette.gui.addbg        = { 'light' : s:gui_green      }
 let s:palette.gui.addfg        = { 'light' : "#dfefdf"        }
 let s:palette.gui.changebg     = { 'light' : s:gui_orange     }
@@ -103,7 +102,6 @@ let s:palette.cterm.green        = { 'light' : s:cterm_green      }
 let s:palette.cterm.aqua         = { 'light' : s:cterm_aqua       }
 let s:palette.cterm.blue         = { 'light' : s:cterm_blue       }
 let s:palette.cterm.purple       = { 'light' : s:cterm_purple     }
-let s:palette.cterm.darkcolumn   = { 'light' : "234"              }
 let s:palette.cterm.addbg        = { 'light' : s:cterm_green      }
 let s:palette.cterm.addfg        = { 'light' : "194"              }
 let s:palette.cterm.changebg     = { 'light' : s:cterm_orange     }
@@ -164,7 +162,6 @@ call s:build_prim('bg', 'blue')
 call s:build_prim('bg', 'purple')
 call s:build_prim('bg', 'window')
 call s:build_prim('bg', 'popupwindow')
-call s:build_prim('bg', 'darkcolumn')
 call s:build_prim('bg', 'addbg')
 call s:build_prim('bg', 'addfg')
 call s:build_prim('bg', 'changebg')
@@ -197,7 +194,6 @@ call s:build_prim('fg', 'aqua')
 call s:build_prim('fg', 'blue')
 call s:build_prim('fg', 'purple')
 call s:build_prim('fg', 'window')
-call s:build_prim('fg', 'darkcolumn')
 call s:build_prim('fg', 'addbg')
 call s:build_prim('fg', 'addfg')
 call s:build_prim('fg', 'changebg')
