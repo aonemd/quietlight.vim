@@ -79,9 +79,9 @@ See [LICENSE](https://github.com/aonemd/quietlight.vim/blob/master/LICENSE).
 
 ## Screenshots
 
-![screenshot_1](https://user-images.githubusercontent.com/16504838/115804827-0ebbed00-a3e4-11eb-9e24-5d938fdc7e69.png)
+![screenshot_1](https://user-images.githubusercontent.com/16504838/115854031-1f8f5180-a42a-11eb-821a-c67e6fa97026.png)
 
-![screenshot_2](https://user-images.githubusercontent.com/16504838/115805140-a1f52280-a3e4-11eb-8c22-39ccd7225e8b.png)
+![screenshot_2](https://user-images.githubusercontent.com/16504838/115854126-3cc42000-a42a-11eb-9a70-12153c3c05f0.png)
 
 ![screenshot_3](https://user-images.githubusercontent.com/16504838/115805286-f39dad00-a3e4-11eb-9603-9fddbf35a49b.png)
 
