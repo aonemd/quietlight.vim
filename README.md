@@ -5,6 +5,8 @@
 
   A nice light colorscheme for Vim ported from [Quiet Light for
   VSC](https://github.com/onecrayon/theme-quietlight-vsc).
+
+  ![screenshot_demo](https://user-images.githubusercontent.com/16504838/115804325-1202a900-a3e3-11eb-8c65-dde296b5806b.png)
 </div>
 
 ## Installation
