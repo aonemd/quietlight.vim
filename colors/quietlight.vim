@@ -65,6 +65,7 @@ let s:palette.gui.mauve        = { 'light' : "#705697"        }
 let s:palette.gui.lightmauve   = { 'light' : "#c4b7d7"        }
 let s:palette.gui.darkpurple   = { 'light' : "#5f005f"        }
 let s:palette.gui.lime         = { 'light' : "#c1f5b0"        }
+let s:palette.gui.olive        = { 'light' : "#a6b39b"        }
 let s:palette.gui.gray         = { 'light' : "#777777"        }
 let s:palette.gui.statusline   = { 'light' : s:gui_background }
 let s:palette.gui.statuslinenc = { 'light' : s:gui_background }
@@ -115,6 +116,7 @@ let s:palette.cterm.mauve        = { 'light' : "60"               }
 let s:palette.cterm.lightmauve   = { 'light' : "60"               }
 let s:palette.cterm.darkpurple   = { 'light' : "53"               }
 let s:palette.cterm.lime         = { 'light' : "157"              }
+let s:palette.cterm.olive        = { 'light' : "145"              }
 let s:palette.cterm.gray         = { 'light' : "102"              }
 let s:palette.cterm.statusline   = { 'light' : s:cterm_background }
 let s:palette.cterm.statuslinenc = { 'light' : s:cterm_background }
@@ -175,6 +177,7 @@ call s:build_prim('bg', 'mauve')
 call s:build_prim('bg', 'lightmauve')
 call s:build_prim('bg', 'darkpurple')
 call s:build_prim('bg', 'lime')
+call s:build_prim('bg', 'olive')
 call s:build_prim('bg', 'gray')
 call s:build_prim('bg', 'statusline')
 call s:build_prim('bg', 'statuslinenc')
@@ -206,6 +209,7 @@ call s:build_prim('fg', 'mauve')
 call s:build_prim('fg', 'lightmauve')
 call s:build_prim('fg', 'darkpurple')
 call s:build_prim('fg', 'lime')
+call s:build_prim('fg', 'olive')
 call s:build_prim('fg', 'gray')
 call s:build_prim('fg', 'gitgutteradd')
 call s:build_prim('fg', 'gitgutterchg')
@@ -249,6 +253,7 @@ exe "let s:sp_mauve       = ' guisp=". s:palette.gui.mauve[s:style] ."'"
 exe "let s:sp_lightmauve  = ' guisp=". s:palette.gui.lightmauve[s:style] ."'"
 exe "let s:sp_darkpurple  = ' guisp=". s:palette.gui.darkpurple[s:style] ."'"
 exe "let s:sp_lime        = ' guisp=". s:palette.gui.lime[s:style] ."'"
+exe "let s:sp_olive       = ' guisp=". s:palette.gui.olive[s:style] ."'"
 exe "let s:sp_gray        = ' guisp=". s:palette.gui.gray[s:style] ."'"
 
 "}}}
@@ -267,8 +272,8 @@ exe "hi! DiffDelete"    .s:fg_background  .s:bg_delbg       .s:fmt_none
 exe "hi! DiffText"      .s:fg_background  .s:bg_blue        .s:fmt_none
 exe "hi! ErrorMsg"      .s:fg_background  .s:bg_red         .s:fmt_stnd
 exe "hi! VertSplit"     .s:fg_selection   .s:bg_none        .s:fmt_none
-exe "hi! Folded"        .s:fg_foreground  .s:bg_selection   .s:fmt_none
-exe "hi! FoldColumn"    .s:fg_none        .s:bg_selection   .s:fmt_none
+exe "hi! Folded"        .s:fg_foreground  .s:bg_olive       .s:fmt_none
+exe "hi! FoldColumn"    .s:fg_none        .s:bg_olive       .s:fmt_none
 exe "hi! SignColumn"    .s:fg_none        .s:bg_background  .s:fmt_none
 "   Incsearch"
 exe "hi! LineNr"        .s:fg_foreground  .s:bg_none        .s:fmt_none
