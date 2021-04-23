@@ -293,7 +293,7 @@ exe "hi! StatusLine"        .s:fg_mauve       .s:bg_statusline    .s:fmt_revr
 exe "hi! StatusLineNC"      .s:fg_lightmauve  .s:bg_statuslinenc  .s:fmt_revr
 exe "hi! StatusLineTerm"    .s:fg_mauve       .s:bg_statusline    .s:fmt_revr
 exe "hi! StatusLineTermNC"  .s:fg_lightmauve  .s:bg_statuslinenc  .s:fmt_revr
-exe "hi! TabLine"           .s:fg_foreground  .s:bg_darkcolumn    .s:fmt_revr
+exe "hi! TabLine"           .s:fg_foreground  .s:bg_comment       .s:fmt_none
 exe "hi! TabLineFill"       .s:fg_background  .s:bg_background    .s:fmt_revr
 exe "hi! EndOfBuffer"       .s:fg_background  .s:bg_background    .s:fmt_none
 "   TabLineSel"
