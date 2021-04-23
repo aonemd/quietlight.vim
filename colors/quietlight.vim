@@ -273,8 +273,8 @@ exe "hi! SpellBad"          .s:fg_darkred     .s:bg_none          .s:fmt_undr
 exe "hi! SpellRare"         .s:fg_purple      .s:bg_darkpurple    .s:fmt_undr
 exe "hi! StatusLine"        .s:fg_mauve       .s:bg_statusline    .s:fmt_revr
 exe "hi! StatusLineNC"      .s:fg_lightmauve  .s:bg_statuslinenc  .s:fmt_revr
-exe "hi! StatusLineTerm"    .s:fg_blue        .s:bg_statusline    .s:fmt_revr
-exe "hi! StatusLineTermNC"  .s:fg_aqua        .s:bg_statuslinenc  .s:fmt_revr
+exe "hi! StatusLineTerm"    .s:fg_mauve       .s:bg_statusline    .s:fmt_revr
+exe "hi! StatusLineTermNC"  .s:fg_lightmauve  .s:bg_statuslinenc  .s:fmt_revr
 exe "hi! TabLine"           .s:fg_foreground  .s:bg_darkcolumn    .s:fmt_revr
 exe "hi! TabLineFill"       .s:fg_background  .s:bg_background    .s:fmt_revr
 exe "hi! EndOfBuffer"       .s:fg_background  .s:bg_background    .s:fmt_none
@@ -370,10 +370,10 @@ hi! link diffAdded Special
 " ----------------------------------------------------------------------------
 "  This is atelierforest-dark color palette
 let g:terminal_ansi_colors = [
-      \ "#f5f5f5", "#f22c40", "#5ab738", "#d5911a",
-      \ "#407ee7", "#6666ea", "#00ad9c", "#a8a19f",
-      \ "#766e6b", "#f22c40", "#5ab738", "#d78700",
-      \ "#407ee7", "#6666ea", "#00ad9c", "#f1efee"
+      \ "#f5f5f5", "#aa3731", "#448c27", "#ab6526",
+      \ "#4b83cd", "#7a3e9d", "#00ad9c", "#a8a19f",
+      \ "#777777", "#aa3731", "#448c27", "#ab6526",
+      \ "#4b83cd", "#7a3e9d", "#00ad9c", "#f5f5f5"
       \]
 
 "}}}
